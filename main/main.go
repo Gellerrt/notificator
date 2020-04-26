@@ -6,22 +6,22 @@ import (
 	l4g "github.com/alecthomas/log4go"
 	"github.com/magiconair/properties"
 	"github.com/robfig/cron"
-	"study_golang/checkDbAndSendNotification/config"
-	"study_golang/checkDbAndSendNotification/config/readConfig"
-	"study_golang/checkDbAndSendNotification/database"
-	"study_golang/checkDbAndSendNotification/job"
-	"study_golang/checkDbAndSendNotification/server"
+	"notificator/notificator/config"
+	"notificator/notificator/config/readConfig"
+	"notificator/notificator/database"
+	"notificator/notificator/job"
+	"notificator/notificator/server"
 )
 
 var (
-	Url     string
-	PortSend string
-	Cron    string
-	CronAddMessage string
-	Log     l4g.Logger
-	ServerLog l4g.Logger
-	Version = "1.0.0"
-	LocalServerUrl string
+	Url             string
+	PortSend        string
+	Cron            string
+	CronAddMessage  string
+	Log             l4g.Logger
+	ServerLog       l4g.Logger
+	Version         = "1.0.0"
+	LocalServerUrl  string
 	LocalServerPort string
 )
 
@@ -39,7 +39,7 @@ func main() {
 	c := initCron()
 	c.Start()
 	Log.Info(fmt.Sprintf("<-------------------- Application started -------------------->"))
-	for i:= 1; i > 0; {
+	for i := 1; i > 0; {
 		i++
 	}
 	//TODO THIS ONE BREAKS JOBS. MAIN DOESN'T RETURN BUT INTERRUPTS?
@@ -93,6 +93,6 @@ func initCron() *cron.Cron {
 	if err != nil {
 		_ = Log.Error("Error while adding new messages job")
 	}
-	Log.Info("Created cronJob")
+	Log.Info("Created cron jobs")
 	return c
 }

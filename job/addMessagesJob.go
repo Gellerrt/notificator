@@ -2,7 +2,7 @@ package job
 
 import (
 	"math/rand"
-	"study_golang/checkDbAndSendNotification/database"
+	"notificator/notificator/database"
 	"time"
 )
 

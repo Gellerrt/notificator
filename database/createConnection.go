@@ -6,9 +6,9 @@ import (
 	l4g "github.com/alecthomas/log4go"
 	"github.com/jackc/pgx"
 	"github.com/magiconair/properties"
+	"notificator/notificator/config"
+	"notificator/notificator/config/readConfig"
 	"os"
-	"study_golang/checkDbAndSendNotification/config"
-	"study_golang/checkDbAndSendNotification/config/readConfig"
 )
 
 // initialize connection to database

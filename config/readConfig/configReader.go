@@ -2,7 +2,7 @@ package readConfig
 
 import (
 	"github.com/magiconair/properties"
-	)
+)
 
 // read .properties file
 func ReadPropsConfig(path string, enc properties.Encoding) *properties.Properties {

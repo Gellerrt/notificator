@@ -9,15 +9,13 @@ import (
 )
 
 var (
-	conn      *pgx.Conn
+	conn *pgx.Conn
 
 	log *log4go.Logger
 
-	sqlSelect = "SELECT rquid, message FROM public.notification_data nd" +
-		"WHERE need_notification = true AND sent IS NOT true"
+	sqlSelect = "SELECT rquid, message FROM public.notification_data nd WHERE need_notification is true AND sent IS NOT true"
 
-	sqlChangeSent = "UPDATE notification_data SET sent = true" +
-		"WHERE rquid = $1"
+	sqlChangeSent = "UPDATE notification_data SET sent = true WHERE rquid = $1"
 
 	sqlInsertMessages = "INSERT INTO public.notification_data (rquid, message, need_notification)" +
 		"VALUES ($1, $2, $3)"
