@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"github.com/alecthomas/log4go"
 	"net/http"
+	"notificator/notificator/database"
 	"strings"
-	"study_golang/checkDbAndSendNotification/database"
 )
 
 var (
-	log       *log4go.Logger
-	url string
+	log  *log4go.Logger
+	url  string
 	port string
 )
 

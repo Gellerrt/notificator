@@ -1,21 +1,41 @@
-[2020/04/25 23:25:19 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
-[2020/04/25 23:28:11 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
-[2020/04/25 23:33:48 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
-[2020/04/25 23:34:23 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
-rquid=f5jQjDbqNldAQTs
-message=OYz7MC62Oxxvblh0v2aoV8NfRn1rgW
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
-rquid=MUxXh91gqTzHe7x
-message=JYdMJX5IBHpNe4IQ6FnfJLxrYb4ISm
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
-rquid=12345
-message=hello
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
-[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
-rquid=qY0lrlTwENjly3F
-message=B9z3lNKOTJlC2xc39nxmxFHEEAnfJW
-[2020/04/26 00:12:33 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
+[2020/04/26 12:00:22 MSK] [INFO] (notificator/notificator/server.InitServer:17) <----- Starting server ----->
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=uRpEncY0CGaJ5at
+message=6yUdI2Hj8ahoC4i2W3DVOMmnoePgCx
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=sjYRJu0mZmAzLx0
+message=1jys49soopQzZ5WcpuRTx9ZhkzFiml
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=nmxaFX9GnOlmgUp
+message=RvsO4rzUessfegfbTUm23B1Z8UZPTb
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=C0wz9JfLRlXKpfp
+message=w4SrlRJCiYQZ6Q2QTQevpoK4wd8n0C
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=xcVIOkA1Give3Mf
+message=gJf23nfeyOiUf0Yjg1DSfWSpWfWjk1
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=aKjRfoy0Ubq8l8B
+message=Q7rJz7otpQkaXJ6r3XmrXAOkxRWamB
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=rfsijAbJ0mwaszN
+message=n6ZhoWbzrPkjCzXhpNOSBpThjrYN9g
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=dKJ2GRbt0f3Fbot
+message=CjUF6QII1tmcscHoydKmL75wrgMhoM
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=saEDnZN6MZYsjVk
+message=C82680an7nmBnR13Fp70UX2A4mxOcC
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:25) Received message
+[2020/04/26 12:01:00 MSK] [INFO] (notificator/notificator/server.handler:31) Received body:
+rquid=RpywVIoZQ5wmF4s
+message=PPYOXsgKsDNvwLE7iMTaRwIyJfU2WU
