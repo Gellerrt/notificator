@@ -1,0 +1,21 @@
+[2020/04/25 23:25:19 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
+[2020/04/25 23:28:11 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
+[2020/04/25 23:33:48 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
+[2020/04/25 23:34:23 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
+rquid=f5jQjDbqNldAQTs
+message=OYz7MC62Oxxvblh0v2aoV8NfRn1rgW
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
+rquid=MUxXh91gqTzHe7x
+message=JYdMJX5IBHpNe4IQ6FnfJLxrYb4ISm
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
+rquid=12345
+message=hello
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:23) Received message
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.handler:29) Received body:
+rquid=qY0lrlTwENjly3F
+message=B9z3lNKOTJlC2xc39nxmxFHEEAnfJW
+[2020/04/26 00:12:33 MSK] [INFO] (study_golang/checkDbAndSendNotification/server.InitServer:16) <----- Starting server ----->
