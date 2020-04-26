@@ -1,0 +1,202 @@
+[2020/04/25 23:25:19 MSK] [INFO] (main.main:33) <-------------------- Application version 0.0.1 is starting -------------------->
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:63) Got URL = "https://localhost"
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:66) Got PortSend = "8000"
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:69) Got Cron = "*/5 * * * *"
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:72) Got CronAddMessage = "* * * * *"
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:75) Got LocalServerUrl = "localhost"
+[2020/04/25 23:25:19 MSK] [INFO] (main.initParams:78) Got LocalServerPort = "8000"
+[2020/04/25 23:25:19 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.initDbParams:27) Got parameters to init connection to database:
+host=127.0.0.1; port=5432; database=work; user=nefremov; password=Aa174683Aa
+[2020/04/25 23:25:19 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InitDb:17) Successfully initialized connection to database
+[2020/04/25 23:25:19 MSK] [INFO] (main.initCron:84) Added DoJob job
+[2020/04/25 23:25:19 MSK] [INFO] (main.initCron:89) Added AddMessage job
+[2020/04/25 23:25:19 MSK] [INFO] (main.initCron:93) Created cronJob
+[2020/04/25 23:26:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:26:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.InsertMessage:59) Error while inserting new message: ERROR: operator does not exist: & integer (SQLSTATE 42883)
+
+[2020/04/25 23:27:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:27:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.InsertMessage:59) Error while inserting new message: ERROR: operator does not exist: & integer (SQLSTATE 42883)
+
+[2020/04/25 23:28:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:28:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.InsertMessage:59) Error while inserting new message: ERROR: operator does not exist: & integer (SQLSTATE 42883)
+
+[2020/04/25 23:28:11 MSK] [INFO] (main.main:32) <-------------------- Application version 0.0.1 is starting -------------------->
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:63) Got URL = "https://localhost"
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:66) Got PortSend = "8000"
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:69) Got Cron = "*/5 * * * *"
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:72) Got CronAddMessage = "* * * * *"
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:75) Got LocalServerUrl = "localhost"
+[2020/04/25 23:28:11 MSK] [INFO] (main.initParams:78) Got LocalServerPort = "8000"
+[2020/04/25 23:28:11 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.initDbParams:27) Got parameters to init connection to database:
+host=127.0.0.1; port=5432; database=work; user=nefremov; password=Aa174683Aa
+[2020/04/25 23:28:11 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InitDb:17) Successfully initialized connection to database
+[2020/04/25 23:28:11 MSK] [INFO] (main.initCron:84) Added DoJob job
+[2020/04/25 23:28:11 MSK] [INFO] (main.initCron:89) Added AddMessage job
+[2020/04/25 23:28:11 MSK] [INFO] (main.initCron:93) Created cronJob
+[2020/04/25 23:28:11 MSK] [INFO] (main.main:41) <-------------------- Application started -------------------->
+[2020/04/25 23:29:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:29:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:61) Inserted new message rquid=qY0lrlTwENjly3F
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:24) Start searching for notification messages
+[2020/04/25 23:30:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:28) Error while executing query: conn busy
+
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:40) Found 0 messages that need notification: map[]
+
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/25 23:30:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:61) Inserted new message rquid=f5jQjDbqNldAQTs
+[2020/04/25 23:31:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:31:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:61) Inserted new message rquid=LDbh6VN5alG4tuk
+[2020/04/25 23:32:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:32:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:61) Inserted new message rquid=MUxXh91gqTzHe7x
+[2020/04/25 23:33:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:33:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:61) Inserted new message rquid=MlGHJpKLmxknSfA
+[2020/04/25 23:33:48 MSK] [INFO] (main.main:32) <-------------------- Application version 0.0.1 is starting -------------------->
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:63) Got URL = "https://localhost"
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:66) Got PortSend = "8000"
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:69) Got Cron = "* * * * *"
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:72) Got CronAddMessage = "* * * * *"
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:75) Got LocalServerUrl = "localhost"
+[2020/04/25 23:33:48 MSK] [INFO] (main.initParams:78) Got LocalServerPort = "8000"
+[2020/04/25 23:33:48 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.initDbParams:27) Got parameters to init connection to database:
+host=127.0.0.1; port=5432; database=work; user=nefremov; password=Aa174683Aa
+[2020/04/25 23:33:48 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InitDb:17) Successfully initialized connection to database
+[2020/04/25 23:33:48 MSK] [INFO] (main.initCron:84) Added DoJob job
+[2020/04/25 23:33:48 MSK] [INFO] (main.initCron:89) Added AddMessage job
+[2020/04/25 23:33:48 MSK] [INFO] (main.initCron:93) Created cronJob
+[2020/04/25 23:33:48 MSK] [INFO] (main.main:41) <-------------------- Application started -------------------->
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:27) Start searching for notification messages
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:34:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.InsertMessage:67) Error while inserting new message: conn busy
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:44) Found 4 messages that need notification: map[12345:hello MUxXh91gqTzHe7x:JYdMJX5IBHpNe4IQ6FnfJLxrYb4ISm f5jQjDbqNldAQTs:OYz7MC62Oxxvblh0v2aoV8NfRn1rgW qY0lrlTwENjly3F:B9z3lNKOTJlC2xc39nxmxFHEEAnfJW]
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 4 notifications
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=https://localhost:8000
+[2020/04/25 23:34:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:34) Error while sending POST request: Post https://localhost:8000: http: server gave HTTP response to HTTPS client
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=https://localhost:8000
+[2020/04/25 23:34:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:34) Error while sending POST request: Post https://localhost:8000: http: server gave HTTP response to HTTPS client
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=https://localhost:8000
+[2020/04/25 23:34:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:34) Error while sending POST request: Post https://localhost:8000: http: server gave HTTP response to HTTPS client
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=https://localhost:8000
+[2020/04/25 23:34:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:34) Error while sending POST request: Post https://localhost:8000: http: server gave HTTP response to HTTPS client
+
+[2020/04/25 23:34:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/25 23:34:23 MSK] [INFO] (main.main:32) <-------------------- Application version 0.0.1 is starting -------------------->
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:63) Got URL = "http://localhost"
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:66) Got PortSend = "8000"
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:69) Got Cron = "* * * * *"
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:72) Got CronAddMessage = "* * * * *"
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:75) Got LocalServerUrl = "localhost"
+[2020/04/25 23:34:23 MSK] [INFO] (main.initParams:78) Got LocalServerPort = "8000"
+[2020/04/25 23:34:23 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.initDbParams:27) Got parameters to init connection to database:
+host=127.0.0.1; port=5432; database=work; user=nefremov; password=Aa174683Aa
+[2020/04/25 23:34:23 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InitDb:17) Successfully initialized connection to database
+[2020/04/25 23:34:23 MSK] [INFO] (main.initCron:84) Added DoJob job
+[2020/04/25 23:34:23 MSK] [INFO] (main.initCron:89) Added AddMessage job
+[2020/04/25 23:34:23 MSK] [INFO] (main.initCron:93) Created cronJob
+[2020/04/25 23:34:23 MSK] [INFO] (main.main:41) <-------------------- Application started -------------------->
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:27) Start searching for notification messages
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/25 23:35:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.InsertMessage:67) Error while inserting new message: conn busy
+
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:44) Found 4 messages that need notification: map[12345:hello MUxXh91gqTzHe7x:JYdMJX5IBHpNe4IQ6FnfJLxrYb4ISm f5jQjDbqNldAQTs:OYz7MC62Oxxvblh0v2aoV8NfRn1rgW qY0lrlTwENjly3F:B9z3lNKOTJlC2xc39nxmxFHEEAnfJW]
+
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 4 notifications
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=http://localhost:8000
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:50) Going to set sent=true to rquid = f5jQjDbqNldAQTs
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:57) Successfuly set 'sent'=true for rquid=f5jQjDbqNldAQTs
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.changeStatus:45) Successfuly sent notification rquid=f5jQjDbqNldAQTs
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=http://localhost:8000
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:50) Going to set sent=true to rquid = MUxXh91gqTzHe7x
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:57) Successfuly set 'sent'=true for rquid=MUxXh91gqTzHe7x
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.changeStatus:45) Successfuly sent notification rquid=MUxXh91gqTzHe7x
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=http://localhost:8000
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:50) Going to set sent=true to rquid = 12345
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:57) Successfuly set 'sent'=true for rquid=12345
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.changeStatus:45) Successfuly sent notification rquid=12345
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.sendNotificationAndChangeStatus:31) Trying to send message to address=http://localhost:8000
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:50) Going to set sent=true to rquid = qY0lrlTwENjly3F
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.ChangeStatusSent:57) Successfuly set 'sent'=true for rquid=qY0lrlTwENjly3F
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.changeStatus:45) Successfuly sent notification rquid=qY0lrlTwENjly3F
+[2020/04/25 23:35:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 4 notifications, see ya
+[2020/04/26 00:12:33 MSK] [INFO] (main.main:32) <-------------------- Application version 1.0.0 is starting -------------------->
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:63) Got URL = "http://localhost"
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:66) Got PortSend = "8000"
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:69) Got Cron = "* * * * *"
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:72) Got CronAddMessage = "* * * * *"
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:75) Got LocalServerUrl = "localhost"
+[2020/04/26 00:12:33 MSK] [INFO] (main.initParams:78) Got LocalServerPort = "8000"
+[2020/04/26 00:12:33 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.initDbParams:27) Got parameters to init connection to database:
+host=127.0.0.1; port=5432; database=work; user=nefremov; password=Aa174683Aa
+[2020/04/26 00:12:33 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InitDb:17) Successfully initialized connection to database
+[2020/04/26 00:12:33 MSK] [INFO] (main.initCron:84) Added DoJob job
+[2020/04/26 00:12:33 MSK] [INFO] (main.initCron:89) Added AddMessage job
+[2020/04/26 00:12:33 MSK] [INFO] (main.initCron:93) Created cronJob
+[2020/04/26 00:12:33 MSK] [INFO] (main.main:41) <-------------------- Application started -------------------->
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:13:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:13:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=rfsijAbJ0mwaszN
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:14:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:14:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=Dnij5BI7IV3lxCj
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:15:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:15:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=dKJ2GRbt0f3Fbot
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:16:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:16:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=5slY8Uvkz04fMHr
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:17:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:17:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=saEDnZN6MZYsjVk
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:18:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:18:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=RpywVIoZQ5wmF4s
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.AddMessage:12) Trying to insert new message
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:36) Start searching for notification messages
+[2020/04/26 00:19:00 MSK] [EROR] (study_golang/checkDbAndSendNotification/database.SelectMessages:41) Error while executing query: ERROR: syntax error at or near "need_notification" (SQLSTATE 42601)
+
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.SelectMessages:53) Found 0 messages that need notification: map[]
+
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:19) Trying to send 0 notifications
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/job.DoJob:24) Sent and changed status for 0 notifications, see ya
+[2020/04/26 00:19:00 MSK] [INFO] (study_golang/checkDbAndSendNotification/database.InsertMessage:78) Inserted new message rquid=nmxaFX9GnOlmgUp
