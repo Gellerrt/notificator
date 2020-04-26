@@ -45,10 +45,10 @@ func changeStatus(rquid string) int {
 	count := 0
 	sent := database.ChangeStatusSent(rquid)
 	if sent {
-		log.Info(fmt.Sprintf("Successfuly sent notification rquid=%s", rquid))
+		log.Info(fmt.Sprintf("Successfuly sent notification rquid = %s", rquid))
 		count = 1
 	} else {
-		_ = log.Error(fmt.Sprintf("Cannot change 'sent' for rquid=%s", rquid))
+		_ = log.Error(fmt.Sprintf("Cannot change 'sent' for rquid = %s", rquid))
 	}
 	return count
 }
