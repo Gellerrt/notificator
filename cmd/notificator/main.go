@@ -46,10 +46,7 @@ func main() {
 	for i := 1; i > 0; {
 		i++
 	}
-	/*	initLoggers(conf)
-		defer Log.Close()
-		Log.Info(fmt.Sprintf("<-------------------- Application version %s is starting -------------------->", Version))
-		initParams(props)
+	/*
 		conn := database.InitDb(props, &Log)
 		defer conn.Close()
 		go database.InitDao(conn, &Log)

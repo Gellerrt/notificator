@@ -37,13 +37,8 @@ func NewConfig() *Config {
 		URL:            "http:\\localhost",
 		PortSend:       "8000",
 		HostDB:         "localhost",
-		PortDB:         "5432",
-		UserDB:         "nefremov",
-		PasswordDB:     "Aa174683Aa",
 		ServerHost:     "localhost",
 		ServerPort:     "8000",
 		URINotificate: "/notificate",
-		CronSend:       "* * * * *",
-		CronAddMessage: "* * * * *",
 	}
 }
