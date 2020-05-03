@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/go-yaml/yaml v2.1.0+incompatible
+	github.com/gorilla/mux v1.7.4
 	github.com/jackc/pgx v3.6.2+incompatible
 	github.com/magiconair/properties v1.8.1
 	github.com/pkg/errors v0.9.1 // indirect

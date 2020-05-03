@@ -6,6 +6,7 @@ type Config struct {
 	LogName       string `yaml:"log_name"`
 	LogLevel      string `yaml:"log_level"`
 	ServerLogName string `yaml:"server_log_name"`
+	ServerLogLevel string `yaml:"server_log_level"`
 
 	// where to send
 	URL      string `yaml:"URL"`
@@ -20,6 +21,7 @@ type Config struct {
 	// our server params
 	ServerHost string `yaml:"server_host"`
 	ServerPort string `yaml:"server_port"`
+	URINotificate string `yaml:"uri_notifications"`
 
 	// crons
 	CronSend       string `yaml:"cron"`
@@ -31,6 +33,7 @@ func NewConfig() *Config {
 		LogName:        "logger",
 		LogLevel:       "DEBUG",
 		ServerLogName:  "server",
+		ServerLogLevel: "DEBUG",
 		URL:            "http:\\localhost",
 		PortSend:       "8000",
 		HostDB:         "localhost",
@@ -39,6 +42,7 @@ func NewConfig() *Config {
 		PasswordDB:     "Aa174683Aa",
 		ServerHost:     "localhost",
 		ServerPort:     "8000",
+		URINotificate: "/notificate",
 		CronSend:       "* * * * *",
 		CronAddMessage: "* * * * *",
 	}

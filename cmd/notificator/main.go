@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"notificator/internal/config"
 	"notificator/internal/notificator"
+	"notificator/internal/server"
 )
 
 //var (
@@ -32,10 +33,18 @@ func init() {
 func main() {
 	flag.Parse()
 	conf, _ := initConfig()
+	server := server.New(conf)
+	err := server.Start()
+	if err != nil {
+		// bad
+	}
 	notificator := notificator.New(conf)
-	err := notificator.Start()
+	err = notificator.Start()
 	if err != nil {
 		//bad
+	}
+	for i := 1; i > 0; {
+		i++
 	}
 	/*	initLoggers(conf)
 		defer Log.Close()
