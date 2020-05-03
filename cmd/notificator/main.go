@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/go-yaml/yaml"
 	"io/ioutil"
 	"notificator/internal/config"
@@ -62,6 +63,8 @@ func initConfig() (*config.Config, error) {
 	}
 	err = yaml.Unmarshal(yamlFile, conf)
 	if err != nil {
+		fmt.Println("error2")
+		fmt.Println(err)
 		return conf, err
 	}
 	return conf, nil

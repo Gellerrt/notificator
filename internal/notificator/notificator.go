@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"notificator/internal/config"
+	"os"
+	"time"
 )
 
 type Notificator struct {
@@ -21,11 +23,10 @@ func New(c *config.Config) *Notificator {
 }
 
 func (n *Notificator) Start() error {
-	n.logger.Info(fmt.Sprintf("<-------------------- Application version %s is starting -------------------->", n.version))
 	if err := n.configLogger(); err != nil {
 		return err
 	}
-	n.logger.Info(fmt.Sprintf("<-------------------- Application started -------------------->"))
+	n.logger.Info(fmt.Sprintf("<-------------------- Application version %s started -------------------->", n.version))
 	return nil
 }
 
@@ -35,6 +36,15 @@ func (n *Notificator) configLogger() error {
 		return err
 	}
 	n.logger.SetLevel(level)
-	n.logger.AddHook()
+	n.logger.SetFormatter(&logrus.TextFormatter{
+		ForceColors:     false,
+		FullTimestamp:   true,
+		TimestampFormat: time.RFC822,
+	})
+	f, err := os.OpenFile(n.conf.LogName, os.O_APPEND | os.O_CREATE | os.O_WRONLY, 0755)
+	if err != nil {
+		return err
+	}
+	n.logger.SetOutput(f)
 	return nil
 }
