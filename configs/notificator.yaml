@@ -1,8 +1,6 @@
 #loggers
 log_name: ./output/application.log
 log_level: DEBUG
-server_log_name: ./output/server.log
-server_log_level: DEBUG
 #where to send
 URL: http://localhost
 port_send: 8000
@@ -12,12 +10,9 @@ cron: "* * * * *"
 #cron_add_message: "*/10 * * * *"
 cron_add_message: "* * * * *"
 #postgres
+  [store]
 host: 127.0.0.1
 port: 5432
 database: work
 user: nefremov
 password: Aa174683Aa
-#server
-server_host: localhost
-server_port: 8000
-uri_notifications: /notificate

@@ -3,6 +3,7 @@ module notificator
 go 1.14
 
 require (
+	github.com/alecthomas/log4go v0.0.0-20180109082532-d146e6b86faa
 	github.com/go-yaml/yaml v2.1.0+incompatible
 	github.com/gorilla/mux v1.7.4
 	github.com/jackc/pgx v3.6.2+incompatible

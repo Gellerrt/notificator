@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/alecthomas/log4go"
 	"net/http"
-	"notificator/internal/database"
+	"notificator/internal/store"
 	"strings"
 )
 
@@ -16,7 +16,7 @@ var (
 
 // do notification job, find and send messages and change theis statuses
 func DoJob() {
-	notifications := database.SelectMessages()
+	notifications := store.SelectMessages()
 	log.Info(fmt.Sprintf("Trying to send %d notifications", len(notifications)))
 	count := 0
 	for rquid, message := range notifications {
@@ -43,7 +43,7 @@ func sendNotificationAndChangeStatus(rquid, message string) int {
 // change status of message
 func changeStatus(rquid string) int {
 	count := 0
-	sent := database.ChangeStatusSent(rquid)
+	sent := store.ChangeStatusSent(rquid)
 	if sent {
 		log.Info(fmt.Sprintf("Successfuly sent notification rquid = %s", rquid))
 		count = 1

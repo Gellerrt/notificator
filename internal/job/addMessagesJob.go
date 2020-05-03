@@ -2,7 +2,7 @@ package job
 
 import (
 	"math/rand"
-	"notificator/internal/database"
+	"notificator/internal/store"
 	"time"
 )
 
@@ -15,7 +15,7 @@ func AddMessage() {
 	rquid := randomSequence(15)
 	message := randomSequence(30)
 	send := randBool()
-	database.InsertMessage(rquid, message, send)
+	store.InsertMessage(rquid, message, send)
 }
 
 // generate random sequence

@@ -1,7 +1,6 @@
-package database
+package store
 
 import (
-	"context"
 	"fmt"
 	"github.com/alecthomas/log4go"
 	"github.com/jackc/pgx"
@@ -34,7 +33,7 @@ func SelectMessages() map[string]string {
 	mutex.Lock()
 	log.Info("Start searching for notification messages")
 	result := make(map[string]string)
-	rows, err := conn.Query(context.Background(), sqlSelect)
+	rows, err := conn.Query(sqlSelect)
 	mutex.Unlock()
 	if err != nil {
 		_ = log.Error(fmt.Sprintf("Error while executing query: %v\n", err))
@@ -57,7 +56,7 @@ func SelectMessages() map[string]string {
 func ChangeStatusSent(rquid string) bool {
 	mutex.Lock()
 	log.Info(fmt.Sprintf("Going to set sent=true to rquid = %s", rquid))
-	_, err := conn.Exec(context.Background(), sqlChangeSent, rquid)
+	_, err := conn.Exec(sqlChangeSent, rquid)
 	mutex.Unlock()
 	if err != nil {
 		_ = log.Error(fmt.Sprintf("Error while changing 'sent' for rquid=%s\n%v\n", rquid, err))
@@ -71,7 +70,7 @@ func ChangeStatusSent(rquid string) bool {
 // insert new message
 func InsertMessage(rquid, message string, needNotification bool) {
 	mutex.Lock()
-	_, err := conn.Exec(context.Background(), sqlInsertMessages, rquid, message, needNotification)
+	_, err := conn.Exec(sqlInsertMessages, rquid, message, needNotification)
 	mutex.Unlock()
 	if err != nil {
 		_ = log.Error(fmt.Sprintf("Error while inserting new message: %s\n", err))

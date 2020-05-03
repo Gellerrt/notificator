@@ -2,10 +2,8 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"github.com/go-yaml/yaml"
 	"io/ioutil"
-	"notificator/internal/config"
 	"notificator/internal/notificator"
 	"notificator/internal/server"
 )
@@ -23,23 +21,23 @@ import (
 //)
 
 var (
-	configPath string
+	configPath       string
+	serverConfigPath string
 )
 
 func init() {
 	flag.StringVar(&configPath, "config-path", "configs/notificator.yaml", "path to config file")
+	flag.StringVar(&serverConfigPath, "server-config-path", "configs/server.yaml", "path to server config file")
 }
 
 func main() {
 	flag.Parse()
-	conf, _ := initConfig()
-	server := server.New(conf)
-	err := server.Start()
-	if err != nil {
-		// bad
-	}
-	notificator := notificator.New(conf)
-	err = notificator.Start()
+	serverConfig, _ := initServerConfig()
+	server := server.New(serverConfig)
+	notificatorConfig, _ := initConfig()
+	go server.Start()
+	notificator := notificator.New(notificatorConfig)
+	err := notificator.Start()
 	if err != nil {
 		//bad
 	}
@@ -47,9 +45,9 @@ func main() {
 		i++
 	}
 	/*
-		conn := database.InitDb(props, &Log)
+		conn := store.InitDb(props, &Log)
 		defer conn.Close()
-		go database.InitDao(conn, &Log)
+		go store.InitDao(conn, &Log)
 		go server.InitServer(LocalServerUrl, LocalServerPort, &ServerLog)
 		job.InitJob(&Log, Url, PortSend)
 		c := initCron()
@@ -61,16 +59,28 @@ func main() {
 		_ = Log.Error("Thread was interrupted")*/
 }
 
-func initConfig() (*config.Config, error) {
-	conf := config.NewConfig()
+//TODO переделать в одну функцию
+func initConfig() (*notificator.Config, error) {
+	conf := notificator.NewConfig()
 	yamlFile, err := ioutil.ReadFile(configPath)
 	if err != nil {
 		return conf, err
 	}
 	err = yaml.Unmarshal(yamlFile, conf)
 	if err != nil {
-		fmt.Println("error2")
-		fmt.Println(err)
+		return conf, err
+	}
+	return conf, nil
+}
+
+func initServerConfig() (*server.Config, error) {
+	conf := server.NewConfig()
+	yamlFile, err := ioutil.ReadFile(serverConfigPath)
+	if err != nil {
+		return conf, err
+	}
+	err = yaml.Unmarshal(yamlFile, conf)
+	if err != nil {
 		return conf, err
 	}
 	return conf, nil

@@ -6,24 +6,23 @@ import (
 	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
-	"notificator/internal/config"
 	"os"
 	"time"
 )
 
 type Server struct {
 	version string
-	conf   *config.Config
-	logger *logrus.Logger
-	router *mux.Router
+	conf    *Config
+	logger  *logrus.Logger
+	router  *mux.Router
 }
 
-func New(c *config.Config) *Server {
+func New(c *Config) *Server {
 	return &Server{
 		version: "0.0.1",
-		conf:   c,
-		logger: logrus.New(),
-		router: mux.NewRouter(),
+		conf:    c,
+		logger:  logrus.New(),
+		router:  mux.NewRouter(),
 	}
 }
 
@@ -33,11 +32,11 @@ func (s *Server) Start() error {
 	}
 	s.configRouter()
 	s.logger.Info(fmt.Sprintf("<-------------------- Application version %s started -------------------->", s.version))
-	return http.ListenAndServe(fmt.Sprintf("%s:%s", s.conf.ServerHost, s.conf.ServerPort), s.router)
+	return http.ListenAndServe(fmt.Sprintf("%s:%s", s.conf.Host, s.conf.Port), s.router)
 }
 
 func (s *Server) configLogger() error {
-	level, err := logrus.ParseLevel(s.conf.ServerLogLevel)
+	level, err := logrus.ParseLevel(s.conf.LogLevel)
 	if err != nil {
 		return err
 	}
@@ -47,7 +46,7 @@ func (s *Server) configLogger() error {
 		FullTimestamp:   true,
 		TimestampFormat: time.RFC822,
 	})
-	f, err := os.OpenFile(s.conf.ServerLogName, os.O_APPEND | os.O_CREATE | os.O_WRONLY, 0755)
+	f, err := os.OpenFile(s.conf.LogName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0755)
 	if err != nil {
 		return err
 	}
@@ -56,11 +55,11 @@ func (s *Server) configLogger() error {
 }
 
 func (s *Server) configRouter() {
-	s.router.HandleFunc(s.conf.URINotificate, s.handleNotificate())
+	s.router.HandleFunc(s.conf.URI, s.handleNotificate())
 }
 
 func (s *Server) handleNotificate() http.HandlerFunc {
-	return func (w http.ResponseWriter, resp *http.Request) {
+	return func(w http.ResponseWriter, resp *http.Request) {
 		s.logger.Info("Received message")
 		fmt.Fprintf(w, "%s %s %s\n", resp.Method, resp.URL, resp.Proto)
 		defer resp.Body.Close()

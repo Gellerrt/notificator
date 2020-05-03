@@ -1,0 +1,5 @@
+server_log_name: ./output/server.log
+server_log_level: DEBUG
+server_host: localhost
+server_port: 8000
+uri_notifications: /notificate
