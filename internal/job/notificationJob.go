@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/alecthomas/log4go"
 	"net/http"
-	"notificator/notificator/database"
+	"notificator/notificator/internal/database"
 	"strings"
 )
 

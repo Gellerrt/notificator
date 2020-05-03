@@ -1,4 +1,4 @@
-package readConfig
+package config
 
 import (
 	"github.com/magiconair/properties"

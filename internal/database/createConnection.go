@@ -6,8 +6,7 @@ import (
 	l4g "github.com/alecthomas/log4go"
 	"github.com/jackc/pgx"
 	"github.com/magiconair/properties"
-	"notificator/notificator/config"
-	"notificator/notificator/config/readConfig"
+	"notificator/notificator/internal/config"
 	"os"
 )
 
@@ -21,11 +20,11 @@ func InitDb(props *properties.Properties, log *l4g.Logger) *pgx.Conn {
 
 // initialize parameters to connect to database
 func initDbParams(props *properties.Properties, log *l4g.Logger) (string, string, string, string, string) {
-	host := readConfig.ParseField(config.HOST, props)
-	port := readConfig.ParseField(config.PORT, props)
-	database := readConfig.ParseField(config.DATABASE, props)
-	user := readConfig.ParseField(config.USER, props)
-	password := readConfig.ParseField(config.PASSWORD, props)
+	host := config.ParseField(config.HOST, props)
+	port := config.ParseField(config.PORT, props)
+	database := config.ParseField(config.DATABASE, props)
+	user := config.ParseField(config.USER, props)
+	password := config.ParseField(config.PASSWORD, props)
 	log.Info(fmt.Sprintf("Got parameters to init connection to database:\n"+
 		"host=%s; port=%s; database=%s; user=%s; password=%s",
 		host, port, database, user, password))

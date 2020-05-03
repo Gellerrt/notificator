@@ -6,11 +6,10 @@ import (
 	l4g "github.com/alecthomas/log4go"
 	"github.com/magiconair/properties"
 	"github.com/robfig/cron"
-	"notificator/notificator/config"
-	"notificator/notificator/config/readConfig"
-	"notificator/notificator/database"
-	"notificator/notificator/job"
-	"notificator/notificator/server"
+	"notificator/notificator/internal/config"
+	"notificator/notificator/internal/database"
+	"notificator/notificator/internal/job"
+	"notificator/notificator/internal/server"
 )
 
 var (
@@ -26,7 +25,7 @@ var (
 )
 
 func main() {
-	props := readConfig.ReadPropsConfig("./resources/config.properties", properties.UTF8)
+	props := config.ReadPropsConfig("./configs/config.properties", properties.UTF8)
 	initLoggers(props)
 	defer Log.Close()
 	Log.Info(fmt.Sprintf("<-------------------- Application version %s is starting -------------------->", Version))
@@ -50,33 +49,33 @@ func main() {
 
 // initialize loggers
 func initLoggers(props *properties.Properties) {
-	name := readConfig.ParseField(config.LOG_NAME, props)
+	name := config.ParseField(config.LOG_NAME, props)
 	Log = make(l4g.Logger)
 	Log.AddFilter(name, l4g.DEBUG, l4g.NewFileLogWriter(name, false))
 
-	serverLogName := readConfig.ParseField(config.SERVER_LOG_NAME, props)
+	serverLogName := config.ParseField(config.SERVER_LOG_NAME, props)
 	ServerLog = make(l4g.Logger)
 	ServerLog.AddFilter(serverLogName, l4g.DEBUG, l4g.NewFileLogWriter(serverLogName, false))
 }
 
 // initialize params from config
 func initParams(props *properties.Properties) {
-	Url = readConfig.ParseField(config.URL, props)
+	Url = config.ParseField(config.URL, props)
 	Log.Info(fmt.Sprintf("Got URL = \"%s\"", Url))
 
-	PortSend = readConfig.ParseField(config.PORT_SEND, props)
+	PortSend = config.ParseField(config.PORT_SEND, props)
 	Log.Info(fmt.Sprintf("Got PortSend = \"%s\"", PortSend))
 
-	Cron = readConfig.ParseField(config.CRON, props)
+	Cron = config.ParseField(config.CRON, props)
 	Log.Info(fmt.Sprintf("Got Cron = \"%s\"", Cron))
 
-	CronAddMessage = readConfig.ParseField(config.CRON_ADD_MESSAGE, props)
+	CronAddMessage = config.ParseField(config.CRON_ADD_MESSAGE, props)
 	Log.Info(fmt.Sprintf("Got CronAddMessage = \"%s\"", CronAddMessage))
 
-	LocalServerUrl = readConfig.ParseField(config.SERVER_HOST, props)
+	LocalServerUrl = config.ParseField(config.SERVER_HOST, props)
 	Log.Info(fmt.Sprintf("Got LocalServerUrl = \"%s\"", LocalServerUrl))
 
-	LocalServerPort = readConfig.ParseField(config.SERVER_PORT, props)
+	LocalServerPort = config.ParseField(config.SERVER_PORT, props)
 	Log.Info(fmt.Sprintf("Got LocalServerPort = \"%s\"", LocalServerPort))
 }
 
