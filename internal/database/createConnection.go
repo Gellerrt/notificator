@@ -6,7 +6,7 @@ import (
 	l4g "github.com/alecthomas/log4go"
 	"github.com/jackc/pgx"
 	"github.com/magiconair/properties"
-	"notificator/notificator/internal/config"
+	"notificator/internal/config"
 	"os"
 )
 

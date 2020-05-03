@@ -2,7 +2,7 @@ package job
 
 import (
 	"math/rand"
-	"notificator/notificator/internal/database"
+	"notificator/internal/database"
 	"time"
 )
 

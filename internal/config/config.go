@@ -1,23 +1,45 @@
 package config
 
-// names of config params
-const (
-	//general
-	LOG_NAME         = "log_name"
-	SERVER_LOG_NAME  = "server_log_name"
-	URL              = "url"
-	PORT_SEND        = "port_send"
-	CRON             = "cron"
-	CRON_ADD_MESSAGE = "cron_add_message"
+type Config struct {
 
-	//postgres
-	HOST     = "host"
-	PORT     = "port"
-	DATABASE = "database"
-	USER     = "user"
-	PASSWORD = "password"
+	// loggers
+	LogName       string `yaml:"log_name"`
+	LogLevel      string `yaml:"log_level"`
+	ServerLogName string `yaml:"server_log_name"`
 
-	//server
-	SERVER_HOST = "server_host"
-	SERVER_PORT = "server_port"
-)
+	// where to send
+	URL      string `yaml:"URL"`
+	PortSend string `yaml:"port_send"`
+
+	// DB params
+	HostDB     string `yaml:"host"`
+	PortDB     string `yaml:"port"`
+	UserDB     string `yaml:"user"`
+	PasswordDB string `yaml:"password"`
+
+	// our server params
+	ServerHost string `yaml:"server_host"`
+	ServerPort string `yaml:"server_port"`
+
+	// crons
+	CronSend       string `yaml:"cron"`
+	CronAddMessage string `yaml:"cron_add_message"`
+}
+
+func NewConfig() *Config {
+	return &Config{
+		LogName:        "logger",
+		LogLevel:       "DEBUG",
+		ServerLogName:  "server",
+		URL:            "http:\\localhost",
+		PortSend:       "8000",
+		HostDB:         "localhost",
+		PortDB:         "5432",
+		UserDB:         "nefremov",
+		PasswordDB:     "Aa174683Aa",
+		ServerHost:     "localhost",
+		ServerPort:     "8000",
+		CronSend:       "* * * * *",
+		CronAddMessage: "* * * * *",
+	}
+}

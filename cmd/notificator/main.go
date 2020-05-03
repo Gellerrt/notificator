@@ -1,54 +1,75 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	l4g "github.com/alecthomas/log4go"
-	"github.com/magiconair/properties"
-	"github.com/robfig/cron"
-	"notificator/notificator/internal/config"
-	"notificator/notificator/internal/database"
-	"notificator/notificator/internal/job"
-	"notificator/notificator/internal/server"
+	"flag"
+	"github.com/go-yaml/yaml"
+	"io/ioutil"
+	"notificator/internal/config"
+	"notificator/internal/notificator"
 )
+
+//var (
+//	Url             string
+//	PortSend        string
+//	Cron            string
+//	CronAddMessage  string
+//	Log             l4g.Logger
+//	ServerLog       l4g.Logger
+//	Version         = "1.0.0"
+//	LocalServerUrl  string
+//	LocalServerPort string
+//)
 
 var (
-	Url             string
-	PortSend        string
-	Cron            string
-	CronAddMessage  string
-	Log             l4g.Logger
-	ServerLog       l4g.Logger
-	Version         = "1.0.0"
-	LocalServerUrl  string
-	LocalServerPort string
+	configPath string
 )
 
-func main() {
-	props := config.ReadPropsConfig("./configs/config.properties", properties.UTF8)
-	initLoggers(props)
-	defer Log.Close()
-	Log.Info(fmt.Sprintf("<-------------------- Application version %s is starting -------------------->", Version))
-	initParams(props)
-	conn := database.InitDb(props, &Log)
-	defer conn.Close(context.Background())
-	go database.InitDao(conn, &Log)
-	go server.InitServer(LocalServerUrl, LocalServerPort, &ServerLog)
-	job.InitJob(&Log, Url, PortSend)
-	c := initCron()
-	c.Start()
-	Log.Info(fmt.Sprintf("<-------------------- Application started -------------------->"))
-	for i := 1; i > 0; {
-		i++
-	}
-	//TODO THIS ONE BREAKS JOBS. MAIN DOESN'T RETURN BUT INTERRUPTS?
-	//while there are working goroutines main doesn't return
-	//runtime.Goexit()
-	_ = Log.Error("Thread was interrupted")
+func init() {
+	flag.StringVar(&configPath, "config-path", "configs/notificator.yaml", "path to config file")
 }
 
+func main() {
+	flag.Parse()
+	conf, _ := initConfig()
+	notificator := notificator.New(conf)
+	err := notificator.Start()
+	if err != nil {
+		//bad
+	}
+	/*	initLoggers(conf)
+		defer Log.Close()
+		Log.Info(fmt.Sprintf("<-------------------- Application version %s is starting -------------------->", Version))
+		initParams(props)
+		conn := database.InitDb(props, &Log)
+		defer conn.Close()
+		go database.InitDao(conn, &Log)
+		go server.InitServer(LocalServerUrl, LocalServerPort, &ServerLog)
+		job.InitJob(&Log, Url, PortSend)
+		c := initCron()
+		c.Start()
+		Log.Info(fmt.Sprintf("<-------------------- Application started -------------------->"))
+		for i := 1; i > 0; {
+			i++
+		}
+		_ = Log.Error("Thread was interrupted")*/
+}
+
+func initConfig() (*config.Config, error) {
+	conf := config.NewConfig()
+	yamlFile, err := ioutil.ReadFile(configPath)
+	if err != nil {
+		return conf, err
+	}
+	err = yaml.Unmarshal(yamlFile, conf)
+	if err != nil {
+		return conf, err
+	}
+	return conf, nil
+}
+
+/*
 // initialize loggers
-func initLoggers(props *properties.Properties) {
+func initLoggers(props *config.Config) {
 	name := config.ParseField(config.LOG_NAME, props)
 	Log = make(l4g.Logger)
 	Log.AddFilter(name, l4g.DEBUG, l4g.NewFileLogWriter(name, false))
@@ -56,8 +77,8 @@ func initLoggers(props *properties.Properties) {
 	serverLogName := config.ParseField(config.SERVER_LOG_NAME, props)
 	ServerLog = make(l4g.Logger)
 	ServerLog.AddFilter(serverLogName, l4g.DEBUG, l4g.NewFileLogWriter(serverLogName, false))
-}
-
+}*/
+/*
 // initialize params from config
 func initParams(props *properties.Properties) {
 	Url = config.ParseField(config.URL, props)
@@ -77,21 +98,21 @@ func initParams(props *properties.Properties) {
 
 	LocalServerPort = config.ParseField(config.SERVER_PORT, props)
 	Log.Info(fmt.Sprintf("Got LocalServerPort = \"%s\"", LocalServerPort))
-}
-
+}*/
+/*
 // initialize cron jobs
 func initCron() *cron.Cron {
 	c := cron.New()
-	_, err := c.AddFunc(Cron, job.DoJob)
+	err := c.AddFunc(Cron, job.DoJob)
 	Log.Info("Added DoJob job")
 	if err != nil {
 		_ = Log.Error("Error while adding notification job")
 	}
-	_, err = c.AddFunc(CronAddMessage, job.AddMessage)
+	err = c.AddFunc(CronAddMessage, job.AddMessage)
 	Log.Info("Added AddMessage job")
 	if err != nil {
 		_ = Log.Error("Error while adding new messages job")
 	}
 	Log.Info("Created cron jobs")
 	return c
-}
+}*/

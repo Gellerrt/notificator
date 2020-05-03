@@ -1,0 +1,19 @@
+#general
+log_name: application.log
+log_level: DEBUG
+server_log_name: server.log
+URL: http://localhost
+port_send: 8000
+#cron: CRON_TZ: UTC 37 14 * * *
+cron: * * * * *
+#cron_add_message: */10 * * * *
+cron_add_message: * * * * *
+#postgres
+host: 127.0.0.1
+port: 5432
+database: work
+user: nefremov
+password: Aa174683Aa
+#server
+server_host: localhost
+server_port: 8000
